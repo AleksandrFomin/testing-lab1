@@ -1,9 +1,11 @@
 public interface HashView {
-    void insert(int value) throws NoSpaceAvailableException;
+    void insert(int value);
 
-    void remove(int value) throws NoSuchValueException;
+    void remove(int value);
 
     Integer find(int value);
 
     void print();
+
+    public AlgoState getAlgoState();
 }
