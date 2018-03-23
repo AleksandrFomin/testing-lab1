@@ -2,7 +2,7 @@ import static java.lang.Math.*;
 
 public class TaylorSeries {
     public double getArccosSeries(double x, double accuracy) {
-        if (accuracy < 0 || x < -1 || x > 1) {
+        if (accuracy <= 0 || x < -1 || x > 1) {
             throw new IllegalArgumentException();
         }
 

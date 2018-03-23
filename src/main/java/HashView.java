@@ -7,5 +7,5 @@ public interface HashView {
 
     void print();
 
-    public AlgoState getAlgoState();
+    AlgoState getAlgoState();
 }

@@ -1,7 +1,8 @@
 import java.util.Arrays;
+import java.util.LinkedList;
 
 public class AlgoState {
-    private Integer[] table;
+    private LinkedList<Integer>[] table;
     private String state = "";
 
     public String getState() {
@@ -16,11 +17,11 @@ public class AlgoState {
         this.state += toAdd;
     }
 
-    public Integer[] getTable() {
+    public LinkedList<Integer>[] getTable() {
         return table;
     }
 
-    public void setTable(Integer[] table) {
+    public void setTable(LinkedList<Integer>[] table) {
         this.table = table;
     }
 
