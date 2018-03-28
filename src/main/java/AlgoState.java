@@ -1,27 +1,19 @@
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
 
 public class AlgoState {
-    private LinkedList<Integer>[] table;
-    private String state = "";
+    private ArrayList<LinkedList<Integer>> table;
+    private String answer;
 
-    public String getState() {
-        return state;
+    public AlgoState() {
     }
 
-    public void setState(String state) {
-        this.state = state;
-    }
-
-    public void addToState(String toAdd) {
-        this.state += toAdd;
-    }
-
-    public LinkedList<Integer>[] getTable() {
+    public ArrayList<LinkedList<Integer>> getTable() {
         return table;
     }
 
-    public void setTable(LinkedList<Integer>[] table) {
+    public void setTable(ArrayList<LinkedList<Integer>> table) {
         this.table = table;
     }
 
@@ -30,7 +22,15 @@ public class AlgoState {
         if (o == null) {
             return false;
         }
-        return Arrays.equals(this.table, ((AlgoState)o).table) &&
-                this.state.equals(((AlgoState)o).state);
+        return this.table.equals(((AlgoState) o).table) &&
+                this.answer.equals(((AlgoState) o).answer);
+    }
+
+    public void setAnswer(String answer) {
+        this.answer = answer;
+    }
+
+    public String getAnswer(){
+        return answer;
     }
 }
