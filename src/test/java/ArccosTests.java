@@ -1,4 +1,3 @@
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -36,6 +35,15 @@ public class ArccosTests {
     }
 
     @Test
+    @DisplayName("arccos(-0.9)")
+    void testMethod8() {
+        value = -0.9;
+        expected = Math.acos(value);
+        actual = ts.getArccosSeries(value, accuracy);
+        assertEquals(expected, actual, accuracy);
+    }
+
+    @Test
     @DisplayName("arccos(-0.4)")
     void testMethod3() {
         value = -0.4;
@@ -54,9 +62,18 @@ public class ArccosTests {
     }
 
     @Test
-    @DisplayName("arccos(0.6)")
+    @DisplayName("arccos(0.4)")
     void testMethod5() {
         value = 0.6;
+        expected = Math.acos(value);
+        actual = ts.getArccosSeries(value, accuracy);
+        assertEquals(expected, actual, accuracy);
+    }
+
+    @Test
+    @DisplayName("arccos(0.9)")
+    void testMethod9() {
+        value = 0.9;
         expected = Math.acos(value);
         actual = ts.getArccosSeries(value, accuracy);
         assertEquals(expected, actual, accuracy);

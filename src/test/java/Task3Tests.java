@@ -4,7 +4,6 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class Task3Tests {
 
@@ -96,5 +95,19 @@ public class Task3Tests {
         fordPrefect.setState(new State(1.12));
 
         assertNotEquals(you.getState(), fordPrefect.getState());
+    }
+
+    @Test
+    @DisplayName("START=>FEELING")
+    void test8() {
+        brainState = BrainEngine.NORMAL;
+        engineState = BrainEngine.NORMAL;
+        you.setCurState(YourState.START);
+        expected = YourState.START;
+        you.feelingPleased();
+
+        assertEquals(expected, you.getCurState());
+        assertEquals(brainState, ((Brain)you.getBrain()).getState());
+        assertEquals(engineState, ((Engine)you.getEngine()).getState());
     }
 }

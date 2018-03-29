@@ -13,35 +13,35 @@ public class You {
     public void raceAlongTheRoad() {
         if (curState == YourState.START) {
             curState = YourState.RACING;
+            System.out.println("Racing along the road");
         }
-        System.out.println("Racing along the road");
     }
 
     public void sailPastCarsLazily() {
         if (curState == YourState.RACING) {
             curState = YourState.SAILING_PAST_CARS;
+            System.out.println("Sailing past cars lazily");
         }
-        System.out.println("Sailing past cars lazily");
     }
 
     public void feelingPleased() {
         if (curState == YourState.SAILING_PAST_CARS) {
             curState = YourState.FEELING_PLEASED;
+            System.out.println("Feeling pleased");
         }
-        System.out.println("Feeling pleased");
     }
 
     public void accidentallyChangeGear(int from, int to, int instead) {
         if (curState == YourState.FEELING_PLEASED) {
             curState = YourState.CHANGING_GEAR;
-        }
-        if (to != instead && (from - to) > 1) {
-            System.out.println("Accidentally gear change");
-            engine.drop();
-            brain.drop();
-            System.out.println("Your feelings = " + value);
-            state = new State(value);
-            state = new State(1.02);
+            if (to != instead && (from - to) > 1) {
+                System.out.println("Accidentally gear change");
+                engine.drop();
+                brain.drop();
+                System.out.println("Your feelings = " + value);
+                state = new State(value);
+                state = new State(1.02);
+            }
         }
     }
 
