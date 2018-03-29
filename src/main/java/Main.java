@@ -2,13 +2,19 @@ import Task3.*;
 
 public class Main {
     public static void main(String[] args) {
-        Remark remark = new Remark();
-        remark.setMessage("remark");
+
         You you = new You();
-        FordPrefect fordPrefect = new FordPrefect(remark);
-        if(you.getState().equals(fordPrefect.getState())){
+        you.raceAlongTheRoad();
+        you.sailPastCarsLazily();
+        you.feelingPleased();
+        you.accidentallyChangeGear(4, 1, 3);
+
+        FordPrefect fordPrefect = new FordPrefect();
+        Remark remark = new Remark("remark");
+        fordPrefect.feel(remark);
+        if (you.getState().equals(fordPrefect.getState())) {
             System.out.println("Feelings are almost identical");
-        }else{
+        } else {
             System.out.println("Feelings are not identical");
         }
     }

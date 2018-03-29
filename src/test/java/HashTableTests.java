@@ -1,4 +1,3 @@
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -17,6 +16,7 @@ public class HashTableTests {
     private HashView hashView;
     private ArrayList<LinkedList<Integer>> table;
     private Integer value;
+    private Integer found;
 
     @BeforeEach
     void setUp() {
@@ -109,8 +109,9 @@ public class HashTableTests {
         expected.setTable(table);
         expected.setAnswer("ab");
 
-        hashView.find(value);
+        found = hashView.find(value);
         assertEquals(expected, hashView.getAlgoState());
+        assertNull(found);
     }
 
     @Test
@@ -125,8 +126,9 @@ public class HashTableTests {
 
         hashView.insert(2);
         hashView.insert(7);
-        hashView.find(value);
+        found = hashView.find(value);
         assertEquals(expected, hashView.getAlgoState());
+        assertEquals(value, found);
     }
 
     @Test
@@ -139,7 +141,8 @@ public class HashTableTests {
         expected.setAnswer("acdeg");
 
         hashView.insert(7);
-        hashView.find(value);
+        found = hashView.find(value);
         assertEquals(expected, hashView.getAlgoState());
+        assertNull(found);
     }
 }

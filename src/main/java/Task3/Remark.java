@@ -3,11 +3,11 @@ package Task3;
 public class Remark {
     private String message;
 
-    public String getMessage() {
-        return message;
+    public Remark(String message){
+        this.message = message;
     }
 
-    public void setMessage(String message) {
-        this.message = message;
+    public String getMessage() {
+        return message;
     }
 }
